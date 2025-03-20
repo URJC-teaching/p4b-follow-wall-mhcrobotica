@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>p4-bump-and-go-mhcrobotica</name>
+  <name>p4b-follow-wall-mhcrobotica</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="h.garciao.2022@alumnos.urjc.es">hugo44</maintainer>
@@ -12,8 +12,8 @@
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
   <depend>kobuki_ros_interfaces</depend>
-
   <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
 
 
   <test_depend>ament_lint_auto</test_depend>

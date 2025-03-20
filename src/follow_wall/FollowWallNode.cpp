@@ -8,14 +8,17 @@
 namespace follow_wall
 {
 
+using namespace std::chrono_literals;
 using std::placeholders::_1;
 
 FollowWallNode::FollowWallNode()
-: Node("follow_wall_asr"), state_(GO_STRAIGHT) {
+: Node("follow_wall"), state_(GO_STRAIGHT) {
+    
     subscription_ = create_subscription<sensor_msgs::msg::LaserScan>(
         "/scan", 10, std::bind(&FollowWallNode::scan_callback, this, _1));
     publisher_ = create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
-    timer_ = create_wall_timer(std::chrono::milliseconds(20), std::bind(&FollowWallNode::control_cycle, this));
+    
+    timer_ = create_wall_timer(20ms, std::bind(&FollowWallNode::control_cycle, this));
 }
 
 void FollowWallNode::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {

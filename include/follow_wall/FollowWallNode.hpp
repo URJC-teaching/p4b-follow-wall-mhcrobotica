@@ -27,8 +27,8 @@ private:
     float front_distance_;
     float left_distance_;
 
-    static constexpr float SPEED_LINEAR = 0.2;
-    static constexpr float SPEED_ANGULAR = 0.5;
+    static constexpr float SPEED_LINEAR = 0.3f;
+    static constexpr float SPEED_ANGULAR = 0.3f;
     static constexpr float DISTANCE_TO_WALL = 1.0;
     static constexpr float OBSTACLE_THRESHOLD = 0.5;
     static constexpr float MAX_WALL_DETECTION = 2.0;
